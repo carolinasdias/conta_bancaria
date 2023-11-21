@@ -2,6 +2,7 @@ package conta;
 
 import java.util.Scanner;
 
+import conta.model.Conta;
 import conta.util.Cores;
 
 public class Menu {
@@ -10,7 +11,20 @@ public class Menu {
 		Scanner leia = new Scanner(System.in);
 
 		int opcao;
-
+		
+		/*criar objetos da classe Conta para testes*/
+		
+		Conta c1 = new Conta(1, 123, 1, "Victória Moraes", 100000.0f);
+		c1.visualizar();
+		System.out.println("Exibir saldo: " + c1.getSaldo());
+		c1.setSaldo(200000.00f);;
+		c1.visualizar();
+		c1.sacar(1000.00f);
+		c1.visualizar();
+		c1.depositar(5000.00f);
+		c1.visualizar();
+				
+		
 		while (true) {
 			
 			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND);
