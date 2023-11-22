@@ -1,9 +1,12 @@
 package conta;
 
+import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
+import conta.util.Cores;
+
 import java.util.Scanner;
 
-import conta.model.Conta;
-import conta.util.Cores;
 
 public class Menu {
 
@@ -12,17 +15,22 @@ public class Menu {
 
 		int opcao;
 		
-		/*criar objetos da classe Conta para testes*/
+				
+				
+		ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Felipe", 100000.0f, 2000.00f);
+		cc1.visualizar();
+		cc1.sacar(101000.00f);
+		cc1.visualizar();
+		cc1.depositar(1000.00f);
+		cc1.visualizar();
+	
+		ContaPoupanca c2 = new ContaPoupanca(2, 123, 2, "Maria dos Santos", 100000.0f, 15);
+		c2.visualizar();
+        c2.sacar(1000.0f);
+		c2.visualizar();
+		c2.depositar(5000.0f);
+		c2.visualizar();
 		
-		Conta c1 = new Conta(1, 123, 1, "Victória Moraes", 100000.0f);
-		c1.visualizar();
-		System.out.println("Exibir saldo: " + c1.getSaldo());
-		c1.setSaldo(200000.00f);;
-		c1.visualizar();
-		c1.sacar(1000.00f);
-		c1.visualizar();
-		c1.depositar(5000.00f);
-		c1.visualizar();
 				
 		
 		while (true) {
