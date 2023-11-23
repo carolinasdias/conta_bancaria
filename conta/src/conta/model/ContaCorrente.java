@@ -10,9 +10,17 @@ public class ContaCorrente extends Conta{
 		super(numero, agencia, tipo, titular, saldo);
 		this.limite = limite;
 	}
-	public float getLimite() {
+	public float getLimite()  {
+		
+		// Atualiza o limite caso o saldo seja negativo
+		
+		if(this.getSaldo() < 0)
+			return this.limite - Math.abs(this.getSaldo());
+		
 		return limite;
+		
 	}
+
 
 	public void setLimite(float limite) {
 		this.limite = limite;
